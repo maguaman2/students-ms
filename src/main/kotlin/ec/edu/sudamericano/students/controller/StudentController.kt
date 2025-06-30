@@ -15,4 +15,9 @@ class StudentController(private val studentService: StudentService) {
     fun list():ResponseEntity<*>{
         return  ResponseEntity(studentService.list(),HttpStatus.OK)
     }
+
+    @GetMapping("/with-grades")
+    fun listWithGrades():ResponseEntity<*>{
+        return  ResponseEntity(studentService.getStudentWithGrades(),HttpStatus.OK)
+    }
 }
